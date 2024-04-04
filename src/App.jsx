@@ -7,23 +7,28 @@ import { WinnerModal } from "./Components/WinnerModal";
 
 function App() {
    const [board, setBoard] = useState(() => {
-      const boardFromStorage = window.localStorage.getItem("board")
-      return boardFromStorage ? JSON.parse(boardFromStorage) : Array(9).fill(null)
+      const boardFromStorage = window.localStorage.getItem("board");
+      return boardFromStorage
+         ? JSON.parse(boardFromStorage)
+         : Array(9).fill(null);
    });
 
    const [turn, setTurn] = useState(() => {
-    const turnFromStorage = window.localStorage.getItem("turn")
-    return turnFromStorage ??  TURNS.X
- });
- 
-   const [winner, setWinner] = useState(null);
+      const turnFromStorage = window.localStorage.getItem("turn");
+      return turnFromStorage ?? TURNS.X;
+   });
+
+   const [winner, setWinner] = useState(() => {
+      const newWinner = window.localStorage.getItem("winner");
+      return newWinner ?? null;
+   });
 
    const resetGame = () => {
       setBoard(Array(9).fill(null));
       setTurn(TURNS.X);
       setWinner(null);
-      window.localStorage.removeItem('board')
-      window.localStorage.removeItem('turn')
+      window.localStorage.removeItem("board");
+      window.localStorage.removeItem("turn");
    };
 
    const updateBoard = (index) => {
@@ -47,6 +52,7 @@ function App() {
       if (newWinner) {
          confetti();
          setWinner(newWinner);
+         window.localStorage.setItem("winner", newWinner);
       } else if (checkEndGame(newBoard)) {
          setWinner(false);
       }
