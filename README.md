@@ -1,8 +1,3 @@
-# React + Vite
+<h1>Tic-tac-toe / Ejercicio práctico React.js</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![image](https://github.com/HolaJose2/Tic-tac-toe/assets/110427144/3ac04c3b-e475-4d3c-95c0-7e56de8a058a)
